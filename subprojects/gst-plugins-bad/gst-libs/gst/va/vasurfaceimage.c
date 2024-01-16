@@ -105,7 +105,7 @@ va_create_surfaces (GstVaDisplay * display, guint rt_format, guint fourcc,
   /* must have modifiers when num_modifiers > 0 */
   g_return_val_if_fail (num_modifiers == 0 || modifiers, FALSE);
 
-  if (fourcc > 0) {
+  if (fourcc > 0 && fourcc != VA_FOURCC_ABGR) {
     /* *INDENT-OFF* */
     attrs[num_attrs++] = (VASurfaceAttrib) {
       .type = VASurfaceAttribPixelFormat,
@@ -114,6 +114,23 @@ va_create_surfaces (GstVaDisplay * display, guint rt_format, guint fourcc,
       .value.value.i = fourcc,
     };
     /* *INDENT-ON* */
+  }
+
+  if (fourcc == VA_FOURCC_ABGR) {
+    /* *INDENT-OFF* */
+    attrs[num_attrs++] = (VASurfaceAttrib) {
+      .type = (VASurfaceAttribType)VASurfaceAttribUsageHint,
+      .flags = VA_SURFACE_ATTRIB_SETTABLE,
+      .value.type = VAGenericValueTypeInteger,
+      .value.value.i = fourcc,
+    };
+
+    attrs[num_attrs++] = (VASurfaceAttrib) {
+      .type = (VASurfaceAttribType)VASurfaceAttribUsageHint,
+      .flags = VA_SURFACE_ATTRIB_SETTABLE,
+      .value.type = VAGenericValueTypeInteger,
+      .value.value.i = VA_SURFACE_ATTRIB_USAGE_HINT_ENCODER,
+    };
   }
 
   if (desc && desc->num_objects > 0) {

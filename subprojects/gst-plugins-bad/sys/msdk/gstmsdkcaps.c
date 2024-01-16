@@ -368,6 +368,8 @@ _fill_mfxframeinfo (GstVideoFormat format, mfxFrameInfo * frameinfo)
   frameinfo->FourCC = gst_msdk_get_mfx_fourcc_from_format (format);
 
   switch (format) {
+    case GST_VIDEO_FORMAT_RGBA:
+    case GST_VIDEO_FORMAT_RGBx:
     case GST_VIDEO_FORMAT_NV12:
     case GST_VIDEO_FORMAT_YV12:
     case GST_VIDEO_FORMAT_I420:
