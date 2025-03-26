@@ -574,8 +574,8 @@ static const struct
   P (MAIN, Main),
   /* P (EXTENDED, ), */
   P (HIGH, High),
-  /* P (HIGH10, ), */
-  /* P (HIGH_422, ), */
+  P (HIGH10, High10),
+  P (HIGH_422, High422),
   /* P (HIGH_444, ), */
   P (MULTIVIEW_HIGH, MultiviewHigh),
   P (STEREO_HIGH, StereoHigh),
