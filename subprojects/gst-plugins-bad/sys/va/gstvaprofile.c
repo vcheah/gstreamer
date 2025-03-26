@@ -55,6 +55,8 @@ static const struct ProfileMap
       "mpegversion = (int) 4, profile = (string) main, "),
   P (H264, Main, "main", "video/x-h264", "profile = (string) main"),
   P (H264, High, "high", "video/x-h264", "profile = (string) high"),
+  P (H264, High10, "high-10", "video/x-h264", "profile = (string) high-10"),
+  P (H264, High422, "high-4:2:2", "video/x-h264", "profile = (string) high-4:2:2"),
   P (VC1, Simple, "simple", "video/x-wmv",
       "wmvversion = (int) 3, profile = (string) simple"),
   P (VC1, Main, "main", "video/x-wmv",

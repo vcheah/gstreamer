@@ -621,6 +621,14 @@ _get_profile (GstVaH264Dec * self, const GstH264SPS * sps, gint max_dpb_size)
         profiles[i++] = VAProfileH264Main;
       }
       break;
+    case GST_H264_PROFILE_HIGH10:
+      //TODO: think about if there are other cases?
+      profiles[i++] = VAProfileH264High10;
+      break;
+    case GST_H264_PROFILE_HIGH_422:
+      //TODO: think about if there are other cases?
+      profiles[i++] = VAProfileH264High422;
+      break;
     case GST_H264_PROFILE_MULTIVIEW_HIGH:
       if (_get_num_views (sps) == 2) {
         profiles[i++] = VAProfileH264StereoHigh;
