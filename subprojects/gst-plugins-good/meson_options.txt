@@ -72,7 +72,7 @@ option('shout2', type : 'feature', value : 'auto', description : 'Shout-casting 
 option('speex', type : 'feature', value : 'auto', description : 'Speex audio codec plugin')
 option('taglib', type : 'feature', value : 'auto', description : 'Tag-writing plugin based on taglib')
 option('twolame', type : 'feature', value : 'auto', description : 'twolame mp2 audio encoder plugin')
-option('vpx', type : 'feature', value : 'auto', description : 'VP8 and VP9 video codec plugin')
+option('vpx', type : 'feature', value : 'disabled', description : 'VP8 and VP9 video codec plugin')
 option('waveform', type : 'feature', value : 'auto', description : 'Windows waveform audio sink plugin')
 option('wavpack', type : 'feature', value : 'auto', description : 'Wavpack audio codec plugin')
 
