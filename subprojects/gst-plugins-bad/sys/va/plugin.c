@@ -126,6 +126,7 @@ plugin_register_decoders (GstPlugin * plugin, GstVaDevice * device,
         }
         break;
 #if VA_CHECK_VERSION(1, 22, 0)
+#if 0
       case VVC:
         if (!gst_va_h266_dec_register (plugin, device, sinkcaps, srccaps,
                 GST_RANK_NONE)) {
@@ -133,6 +134,7 @@ plugin_register_decoders (GstPlugin * plugin, GstVaDevice * device,
               device->render_device_path);
         }
         break;
+#endif
 #endif
       case VP8:
         if (!gst_va_vp8_dec_register (plugin, device, sinkcaps, srccaps,
